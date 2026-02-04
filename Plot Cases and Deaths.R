@@ -37,7 +37,7 @@ suppressPackageStartupMessages({
 ## Science and Engineering (CSSE) at Johns Hopkins University. We load it in
 ## directly from their GitHub page using the raw URL.
 
-covid19_cases_deaths_url <- "https://raw.githubusercontent.com/ysph-dsde/Book-of-Workshops/refs/heads/main/Git-and-GitHub/Data/Deaths%20and%20Cases%20Aggregated%20by%20Week.csv"
+covid19_cases_deaths_url <- "https://raw.githubusercontent.com/ysph-dsde/Book-of-Workshops/refs/heads/main/Workshops/Git-and-GitHub/Data/Deaths%20and%20Cases%20Aggregated%20by%20Week.csv"
 covid19_cases_deaths     <- read_csv(file = covid19_cases_deaths_url, show_col_types = FALSE) |>
   as.data.frame()
 

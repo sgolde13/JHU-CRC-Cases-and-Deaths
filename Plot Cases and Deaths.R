@@ -115,7 +115,7 @@ plot_cases
 # Plot 2: Deaths
 plot_deaths <- covid19_cases_deaths %>% 
   # Select the national level data only.
-  filter(Province_State == "United States") |>
+  filter(Province_State == "New England") |>
   # Start ggplot with date on x-axis and daily count on y-axis
   ggplot(aes(Week, Deaths_Daily)) +
     # Add a line plot with a specified color
@@ -130,12 +130,15 @@ plot_deaths <- covid19_cases_deaths %>%
     scale_y_continuous(labels = scales::label_comma()) +
     # Add labels and title to the plot
     labs(x = NULL, y = "Daily Counts",
-        title = "Daily Death Counts of COVID-19 in the US") +
+         title = "Daily Death Counts of COVID-19 in New England") +
     # Apply a minimal theme to the plot for a clean appearance
     theme_minimal()
 
 
 plot_deaths
+
+ggsave("plot_deaths_NE.jpeg", plot_deaths, 
+       width = 20, height = 12, units = "cm")
 
 
 

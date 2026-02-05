@@ -143,6 +143,22 @@ plot_deaths
 ## ----------------------------------------------------------------------------
 ## SAVE THE FILES
 
+plot_cases <- plot_cases +
+  labs(subtitle = "Data Source: CSSE at Johns Hopkins University",
+       caption = "Visualization by YOUR-TEAM-NAME")
+
+ggsave("plot_cases_captioned.jpeg", plot_cases, 
+       width = 20, height = 12, units = "cm")
+
+plot_deaths <- plot_deaths +
+  labs(subtitle = "Data Source: CSSE at Johns Hopkins University",
+       caption = "Visualization by YOUR-TEAM-NAME")
+
+ggsave("plot_deaths_captioned.jpeg", plot_deaths, 
+       width = 20, height = 12, units = "cm")
+
+
+
 ggsave("plot_cases.jpeg", plot_cases, width = 20, height = 12, units = "cm")
 ggsave("plot_deaths.jpeg", plot_deaths, width = 20, height = 12, units = "cm")
 

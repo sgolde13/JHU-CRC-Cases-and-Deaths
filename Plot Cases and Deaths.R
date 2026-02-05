@@ -139,6 +139,26 @@ plot_deaths
 
 
 
+plot_districts <- covid19_cases_deaths |>
+  filter(Province_State %in% c("West South Central", "Pacific")) |>
+  ggplot(aes(Week, Confirmed_Cases_Daily, color = Province_State)) +
+  geom_line() +
+  scale_color_manual(values = c("West South Central" = "#A353FF", 
+                                "Pacific" = "#00356b")) +
+  scale_y_continuous(labels = unit_format(unit = "K", scale = 1e-3)) +
+  scale_x_date(date_breaks = "4 month", date_labels = "%b %Y") +
+  labs(x = NULL, y = "Daily Counts", 
+       title = "Daily Confirmed Counts of COVID-19 in the 
+                  West South Central and Pacific",
+       color = "Districts") +
+  theme_minimal()
+
+plot_districts
+
+ggsave("plot_districts.jpeg", plot_districts, 
+       width = 20, height = 12, units = "cm")
+
+
 
 ## ----------------------------------------------------------------------------
 ## SAVE THE FILES
